@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-site_theme               : "dirt" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Damla Elmalı / Portfolio"
 title_separator          : "-"
 name                     : &name "Damla Elmalı"  # Update this with your name, this is used in the site title and author profile
@@ -23,7 +23,7 @@ repository               : "damla-elmali/damla-elmali.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "IMG_9003_1.jpg"
   name             : "Damla Elmalı" # Update this with your name
   pronouns         : # example: "she/her"  
   bio              : "3rd year Electronics and Communication Engineering student at Yildiz Technical University."
