@@ -1,0 +1,13 @@
+<div class="cert-card">
+  <img src="{{ include.img | relative_url }}"
+       alt="{{ include.title }}"
+       onclick="openLightbox('{{ include.img | relative_url }}')">
+
+  <h3>{{ include.title }}</h3>
+  <p class="org">{{ include.org }}</p>
+  <p class="desc">{{ include.desc }}</p>
+
+  {% if include.pdf %}
+    <a href="{{ include.pdf | relative_url }}" target="_blank">View PDF</a>
+  {% endif %}
+</div>
