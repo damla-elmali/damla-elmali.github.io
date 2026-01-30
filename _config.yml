@@ -9,7 +9,7 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "contrast" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
-title                    : "Damla Elmalı / Portfolio"
+title                    : "Damla Elmalı / Home"
 title_separator          : "-"
 name                     : &name "Damla Elmalı"  # Update this with your name, this is used in the site title and author profile
 description              : &description "Electronics and Communication Engineering Student | Portfolio"   # Update this with a general description of your site, this is the default if not overridden by a page
