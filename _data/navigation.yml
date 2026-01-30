@@ -22,12 +22,19 @@ main:
         
   # - title: "Blog Posts"
   #   url: /year-archive/
-    
+  
+  - title: "Programs"
+    url: /programs/
+
+  - title: "Certificates"
+    url: /certificates/   
+
   - title: "CV"
-    url: /files/ENG_DamlaElmali_cv.pdf
+    url: /cv/
     
   # - title: "CV"
   #   url: /cv-json/
     
   # - title: "Guide"
   #   url: /markdown/
+
