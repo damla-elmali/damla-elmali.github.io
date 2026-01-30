@@ -3,84 +3,108 @@ layout: page
 title: Certificates
 permalink: /certificates/
 ---
+
 <style>
-  .cert-box { margin-bottom: 25px; border: 1px solid #eee; border-radius: 8px; overflow: hidden; }
-  summary.cert-header { background: #f6f8fa; padding: 12px; cursor: pointer; font-weight: bold; border-bottom: 1px solid #eee; }
-  .cert-content { padding: 15px; }
-  img { border: 1px solid #ddd; border-radius: 4px; margin-top: 10px; max-width: 100%; height: auto; }
-  .markdown-body a { text-decoration: underline !important; color: #0366d6 !important; }
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.cert-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 16px;
+  background: #fff;
+}
+
+.cert-card img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.cert-card h3 {
+  margin: 12px 0 4px;
+}
+
+.cert-card .org {
+  font-weight: 600;
+  color: #555;
+}
+
+.cert-card .desc {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.cert-card a {
+  display: inline-block;
+  margin-top: 6px;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+}
 </style>
 
-# 🎓 Professional Certificates
+<h1>🎓 Certificates & Professional Training</h1>
 
----
+<div class="cert-grid">
 
-## 🤖 Artificial Intelligence & Machine Learning
+<!-- CAMPus -->
+<div class="cert-card">
+  <img src="_certificates/CAMPus/TR_2025_CAMPus_Syllabus.pdf" onclick="openLightbox(this.src)">
+  <h3>CAMPus Program 2025</h3>
+  <p class="org">CAMPus</p>
+  <p class="desc">Program Syllabus & Overview</p>
+  <a href="_certificates/CAMPus/TR_2025_CAMPus_Syllabus.pdf" target="_blank">View PDF</a>
+</div>
 
-<details class="cert-box" open>
-  <summary class="cert-header">YZTA AI & Technology Academy</summary>
-  <div class="cert-content">
-    **Graduation Certificate**<br>
-    <img src="_certificates/YZTA/TR_yzta_mezuniyet.jpg" alt="YZTA Graduation">
-    * [Download PDF](_certificates/YZTA/TR_yzta_mezuniyet.pdf)
-    <br><br>
-    **Technical Trainings**
-    * [AI Bootcamp PDF](_certificates/YZTA/TR_yzta_bootcamp.pdf)  
-    * [Web Development PDF](_certificates/YZTA/TR_yzta_web.pdf)  
-    * [Entrepreneurship PDF](_certificates/YZTA/TR_yzta_girisimcilik.pdf)  
-    * [Ideathon PDF](_certificates/YZTA/TR_yzta_ideathon.pdf)
-  </div>
-</details>
+<!-- YZTA -->
+<div class="cert-card">
+  <img src="_certificates/YZTA/TR_yzta_mezuniyet.jpg" onclick="openLightbox(this.src)">
+  <h3>YZTA AI & Technology Academy</h3>
+  <p class="org">YZTA</p>
+  <p class="desc">Graduation & Technical Trainings</p>
+  <a href="_certificates/YZTA/TR_yzta_mezuniyet.pdf" target="_blank">Graduation PDF</a>
+</div>
 
----
+<!-- Aspire Leaders -->
+<div class="cert-card">
+  <img src="_certificates/AspireLeaders/ENG_damla_elmali_alp_2025_certificate_of_completion_page-0001.jpg" onclick="openLightbox(this.src)">
+  <h3>Aspire Leaders Program</h3>
+  <p class="org">Aspire Institute</p>
+  <p class="desc">Leadership, identity, global excellence</p>
+  <a href="_certificates/AspireLeaders/ENG_damla_elmali_alp_2025_certificate_of_completion.pdf" target="_blank">View PDF</a>
+</div>
 
-## 🌍 Leadership & Social Impact
+</div>
 
-<details class="cert-box">
-  <summary class="cert-header">Aspire Leaders Program (ALP)</summary>
-  <div class="cert-content">
-    <i>Founded by Harvard Faculty, focusing on identity, leadership labs, and global professional excellence.</i><br><br>
-    **Certificate of Completion**<br>
-    <img src="_certificates/AspireLeaders/ENG_damla_elmali_alp_2025_certificate_of_completion_page-0001.jpg" alt="ALP Certificate">
-    * [View PDF](_certificates/AspireLeaders/ENG_damla_elmali_alp_2025_certificate_of_completion.pdf)
-    <br><br>
-    **Module Badges**
-    * [Module 1 PDF](_certificates/AspireLeaders/ENG_ALP_DamlaElmali_module_1_badge_2025.pdf)  
-    * [Module 2 PDF](_certificates/AspireLeaders/ENG_ALP_DamlaElmali_module_2_badge_2025.pdf)
-  </div>
-</details>
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
 
----
-
-## 📊 Project Management
-
-<details class="cert-box">
-  <summary class="cert-header">Google Project Management Specialization</summary>
-  <div class="cert-content">
-    **Full Specialization Capstone**<br>
-    <img src="_certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement.jpg" alt="Google PM Full">
-    * [Specialization PDF](_certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement.pdf)
-    <br><br>
-    **Key Modules**
-    * [Module 1: Foundations PDF](_certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement1_Foundations.pdf)
-    * [Module 2: Project Initiation PDF](_certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement2_ProjectInitiation.pdf)
-    * [Module 3: Project Planning PDF](_certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement3_ProjectPlanning.pdf)
-    * [Module 4: Project Execution PDF](_certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement4_ProjectExecution.pdf)
-  </div>
-</details>
-
----
-
-## 🏫 CAMPus Program
-
-<details class="cert-box">
-  <summary class="cert-header">CAMPus Program Overview 2025</summary>
-  <div class="cert-content">
-    **Program Syllabus**  
-    * [Download PDF](_certificates/CAMPus/TR_2025_CAMPus_Syllabus.pdf)
-  </div>
-</details>
-
----
-
-[← Back to Home](/)
+<script>
+function openLightbox(src) {
+  document.getElementById("lightbox-img").src = src;
+  document.getElementById("lightbox").style.display = "flex";
+}
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
