@@ -7,51 +7,20 @@ author_profile: true
 
 {% include base_path %}
 
-Anladım, sidebar'ı (sol tarafı) jilet gibi sabit tutuyoruz, içeriği ise sağ tarafa doğru "serbest" bırakıyoruz ki o dar alandan kurtulup geniş geniş yayılsın.
-
-AcademicPages'in o meşhur max-width kısıtlamasını sadece sağ taraf için kırıyoruz. İşte sidebar'a dokunmayan ama sağa doğru ferahlayan güncel kod:
-
-certificates.md
-Markdown
----
-layout: single
-title: "Certificates"
-permalink: /certificates/
-author_profile: true
----
-
-{% include base_path %}
-
 <style>
-  /* Sidebar'a dokunmadan içeriği sağa doğru genişleten sihirli dokunuş */
-  @media (min-width: 80em) {
-    .layout--single .page {
-      padding-right: 20px !important;
-      max-width: 1400px !important; /* Standart 800px limitini 1400'e çektik */
-      width: auto !important;
-    }
-    
-    /* İçeriğin sidebar ile çakışmasını önleyen sol boşluk */
-    .layout--single .page__content {
-      padding-left: 20px !important; 
-    }
-  }
-
-  .cert-section { margin-bottom: 3rem; }
-  .cert-section h2 { border-bottom: 2px solid #333; padding-bottom: 5px; margin-bottom: 20px; font-size: 1.5rem; }
-
-  /* 4'lü Grid Sistemi - Artık daha geniş bir alanda */
+  /* AcademicPages Font ve Sidebar Uyumu */
   .cert-grid {
     display: grid;
+    /* Bir satıra tam 4 kart sığması için sabit kolon yapısı */
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
+    gap: 12px;
     margin-top: 20px;
   }
 
   .cert-card {
     border: 1px solid #e1e4e8;
     border-radius: 8px;
-    padding: 12px;
+    padding: 10px;
     background: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     display: flex;
@@ -60,13 +29,14 @@ author_profile: true
   }
 
   .cert-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   }
 
+  /* Görsel boyutlarını küçültüp sabitledik */
   .cert-preview {
     width: 100%;
-    height: 160px; /* Alan genişlediği için yüksekliği artırdık */
+    height: 140px; 
     object-fit: contain;
     background: #fcfcfc;
     border-radius: 4px;
@@ -76,20 +46,29 @@ author_profile: true
   }
 
   .cert-title {
-    font-size: 0.9rem !important;
+    font-size: 0.85rem !important; /* Font boyutunu küçülttük */
     font-weight: bold;
     margin: 0 0 4px 0 !important;
     line-height: 1.2;
     color: #2c3e50;
-    min-height: 2.6em; /* Başlıklar farklı olsa da hizayı bozmaz */
   }
 
-  .cert-meta { font-size: 0.75rem; color: #6a737d; margin-bottom: 8px; }
-  .cert-date { font-style: italic; display: block; margin-top: 2px; }
+  .cert-meta {
+    font-size: 0.75rem;
+    color: #6a737d;
+    margin-bottom: 8px;
+  }
 
+  .cert-date {
+    font-style: italic;
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* Butonları AcademicPages tarzına yaklaştırdık */
   .btn-cert {
-    font-size: 0.8rem;
-    padding: 5px 10px;
+    font-size: 0.75rem;
+    padding: 4px 8px;
     background: #2188ff;
     color: #fff !important;
     text-decoration: none !important;
@@ -98,18 +77,7 @@ author_profile: true
     margin-top: auto;
   }
 
-  /* Lightbox */
-  #lightbox {
-    display: none;
-    position: fixed;
-    z-index: 10000;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
-    align-items: center; justify-content: center;
-    cursor: pointer;
-  }
-  #lightbox img { max-width: 90%; max-height: 90%; border: 2px solid white; }
-
+  /* Tablet ve Mobil Uyumu */
   @media (max-width: 1200px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
 </style>
