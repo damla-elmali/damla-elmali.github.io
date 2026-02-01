@@ -8,18 +8,24 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  /* Sayfa İçerik Alanını Genişletme */
-  .archive, .page {
-    width: 100% !important;
-    max-width: 1200px !important; /* Standart 800px yerine 1200px yaparak sağa genişlettik */
+  /* Sidebar (Fotoğrafın olduğu yer) ile çakışmayı önleyen düzenleme */
+  @media (min-width: 80em) {
+    .archive, .page {
+      /* İçeriği sağa iter ve genişletir */
+      margin-right: 0 !important;
+      width: calc(100% - 300px) !important; /* Sidebar genişliğini (yaklaşık 300px) çıkarır */
+      max-width: 1200px !important;
+      float: right !important;
+    }
   }
 
-  /* Grid Düzeni */
+  /* Grid Sistemi */
   .cert-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 15px;
     margin-top: 20px;
+    clear: both;
   }
 
   .cert-card {
@@ -35,12 +41,12 @@ author_profile: true
 
   .cert-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
   }
 
   .cert-preview {
     width: 100%;
-    height: 150px; 
+    height: 140px; 
     object-fit: contain;
     background: #fcfcfc;
     border-radius: 4px;
@@ -54,7 +60,8 @@ author_profile: true
     font-weight: bold;
     margin: 0 0 5px 0 !important;
     line-height: 1.2;
-    min-height: 2.4em; /* Başlık boyu fark etmeksizin hizayı korur */
+    min-height: 2.4em;
+    color: #333;
   }
 
   .cert-meta { font-size: 0.75rem; color: #666; margin-bottom: 8px; }
@@ -83,9 +90,8 @@ author_profile: true
   }
   #lightbox img { max-width: 90%; max-height: 90%; border: 2px solid white; }
 
-  /* Ekran Uyumu */
-  @media (max-width: 1400px) { .cert-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 1000px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+  /* Duyarlı Tasarım */
+  @media (max-width: 1200px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
 </style>
 
