@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: single
 title: "Programs"
 permalink: /programs/
 author_profile: true
@@ -9,4 +9,4 @@ redirect_from:
 
 ## Programs
 
-- Machine Learning Specialization – Coursera, 2024
+
