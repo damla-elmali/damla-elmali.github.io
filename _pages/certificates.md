@@ -5,146 +5,90 @@ permalink: /certificates/
 author_profile: true
 ---
 
+---
+
 {% include base_path %}
 
+**Damla Elmalı**  
+Email: dmla.elmali@gmail.com  
+Phone: +90 553 361 92 61  
+Location: Istanbul, Türkiye  
+
+LinkedIn: https://www.linkedin.com/in/damla-elmali  
+GitHub: https://github.com/damla-elmali  
+Website: https://damla-elmali.github.io/
+
+---
+
 <style>
-.cert-section {
-  margin: 3rem 0;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #e1e8ed;
-}
-
-.cert-section:last-child {
-  border-bottom: none;
-}
-
-.cert-section h2 {
-  color: #2c3e50;
-  border-bottom: 3px solid #3498db;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-}
-
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-
-.cert-card {
-  border: 1px solid #e1e8ed;
-  border-radius: 12px;
-  padding: 1.2rem;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: all 0.3s ease;
-}
-
-.cert-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  transform: translateY(-3px);
-}
-
-.cert-preview {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  margin-bottom: 1rem;
-  background: #f8f9fa;
-}
-
-.cert-preview:hover {
-  opacity: 0.95;
-}
-
-.cert-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #2c3e50;
-  margin: 0 0 0.5rem 0;
-  line-height: 1.4;
-}
-
-.cert-meta {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.cert-org {
-  font-weight: 600;
-  color: #7f8c8d;
-  font-size: 0.9rem;
-}
-
-.cert-date {
-  font-size: 0.85rem;
-  color: #95a5a6;
-  font-style: italic;
-}
-
-.cert-lang {
-  display: inline-block;
-  padding: 2px 8px;
-  background: #ecf0f1;
-  color: #34495e;
-  font-size: 0.75rem;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.cert-desc {
-  font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.cert-download {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  background: #3498db;
-  color: white !important;
-  text-decoration: none !important;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  transition: background 0.3s ease;
-}
-
-.cert-download:hover {
-  background: #2980b9;
-}
-
-#lightbox {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.92);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  cursor: pointer;
-}
-
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 8px;
-  box-shadow: 0 0 40px rgba(255,255,255,0.3);
-}
-
-@media (max-width: 768px) {
-  .cert-grid {
-    grid-template-columns: 1fr;
+  /* Sayfa genel düzeni */
+  .cert-container { margin-top: 1.5rem; }
+  
+  /* Başlıkları yan yana veya daha kompakt yapma */
+  .cert-section { margin-bottom: 2.5rem; }
+  .cert-section h2 { 
+    border-bottom: 2px solid #333; 
+    padding-bottom: 3px; 
+    margin-bottom: 15px; 
+    font-size: 1.3rem; /* Başlık boyutu biraz küçültüldü */
+    color: #2c3e50;
   }
-}
+
+  /* Sabit 4'lü Grid Sistemi */
+  .cert-grid { 
+    display: grid; 
+    /* Bir satırda tam olarak 4 kart, her biri eşit genişlikte */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 1rem; 
+  }
+
+  /* Kart tasarımı */
+  .cert-card { 
+    border: 1px solid #e1e4e8; 
+    border-radius: 6px; 
+    padding: 0.6rem; 
+    background: #fff; 
+    transition: all 0.2s ease; 
+    display: flex; 
+    flex-direction: column;
+    min-width: 0; /* Grid içinde taşmayı önler */
+  }
+  .cert-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  
+  /* Resim boyutu - Kart ne kadar küçükse o da orantılı kalır */
+  .cert-preview { 
+    width: 100%; 
+    height: 140px; 
+    object-fit: contain; 
+    background: #fcfcfc; 
+    border-radius: 4px; 
+    cursor: zoom-in; 
+    border: 1px solid #f0f0f0; 
+    margin-bottom: 0.4rem; 
+  }
+  
+  .cert-title { font-size: 0.85rem; font-weight: bold; margin-bottom: 3px !important; line-height: 1.2; }
+  .cert-org { font-size: 0.75rem; color: #666; margin-bottom: 2px; }
+  .cert-date { font-size: 0.7rem; color: #999; font-style: italic; margin-bottom: 6px; }
+  
+  .btn-cert { 
+    padding: 3px 8px; 
+    background: #2188ff; 
+    color: #fff !important; 
+    text-decoration: none !important; 
+    border-radius: 3px; 
+    font-size: 0.75rem; 
+    align-self: flex-start; 
+    margin-top: auto; 
+  }
+
+  /* Lightbox */
+  #lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; cursor: pointer; }
+  #lightbox img { max-width: 90%; max-height: 90%; border: 1px solid white; }
+
+  /* Tablet ve Mobil Uyumu */
+  @media (max-width: 1024px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
 </style>
 
 <div class="cert-section">
