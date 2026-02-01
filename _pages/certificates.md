@@ -1,9 +1,10 @@
 ---
-layout: page
+layout: single
 title: "Certificates"
 permalink: /certificates/
 author_profile: true
 ---
+
 {% include base_path %}
 
 <style>
@@ -526,7 +527,7 @@ author_profile: true
     </div>
 
     <div class="cert-card">
-      <img src="{{ site.baseurl }}/certificates/YetGen/EN_MZV-MEF_YetGen_21_Yzyl_Yetkinlikleri_Farkindalk_Program_Katilmc_Sertifikas.jpg" 
+      <img src="{{ site.baseurl }}/certificates/YetGen/EN_YetGen_Certificate.jpg" 
            alt="YetGen 21st Century Skills" 
            class="cert-preview"
            onclick="openLightbox(this.src)">
@@ -537,7 +538,7 @@ author_profile: true
         <span class="cert-lang">ENG</span>
       </div>
       <p class="cert-desc">Program focused on developing essential 21st-century competencies including digital literacy, critical thinking, and collaboration skills.</p>
-      <a href="{{ site.baseurl }}/certificates/YetGen/EN_MZV-MEF_YetGen_21_Yzyl_Yetkinlikleri_Farkindalk_Program_Katilmc_Sertifikas.pdf" 
+      <a href="{{ site.baseurl }}/certificates/YetGen/EN_YetGen_Certificate.pdf" 
          class="cert-download" target="_blank">View Certificate</a>
     </div>
 
