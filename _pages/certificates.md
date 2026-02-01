@@ -8,74 +8,65 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  /* Sidebar (Fotoğrafın olduğu yer) ile çakışmayı önleyen düzenleme */
+  /* Sayfanın toplam genişlik limitini kaldırıyoruz */
+  #main {
+    max-width: none !important;
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+  }
+
+  /* Sidebar varken ana içeriğin fotoğrafın üzerine binmesini engelleyip sağa açıyoruz */
   @media (min-width: 80em) {
     .archive, .page {
-      /* İçeriği sağa iter ve genişletir */
-      margin-right: 0 !important;
-      width: calc(100% - 300px) !important; /* Sidebar genişliğini (yaklaşık 300px) çıkarır */
-      max-width: 1200px !important;
+      width: calc(100% - 320px) !important; /* Sidebar genişliğini (yaklaşık 300px) düşüyoruz */
+      padding-right: 40px !important;
       float: right !important;
+      max-width: none !important; /* Genişlik kısıtlamasını tamamen siliyoruz */
     }
   }
 
-  /* Grid Sistemi */
+  /* 4'lü Grid Sistemi - Artık daha geniş bir alanda */
   .cert-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-    clear: both;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  /* Kartların içindeki resim boyutunu alan genişlediği için biraz artırabiliriz */
+  .cert-preview {
+    width: 100%;
+    height: 180px; 
+    object-fit: contain;
+    background: #fcfcfc;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    margin-bottom: 10px;
+    cursor: zoom-in;
   }
 
   .cert-card {
     border: 1px solid #e1e4e8;
-    border-radius: 8px;
-    padding: 10px;
+    border-radius: 10px;
+    padding: 15px;
     background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
   }
 
   .cert-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  }
-
-  .cert-preview {
-    width: 100%;
-    height: 140px; 
-    object-fit: contain;
-    background: #fcfcfc;
-    border-radius: 4px;
-    border: 1px solid #f0f0f0;
-    margin-bottom: 8px;
-    cursor: zoom-in;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
   }
 
   .cert-title {
-    font-size: 0.85rem !important;
-    font-weight: bold;
-    margin: 0 0 5px 0 !important;
-    line-height: 1.2;
-    min-height: 2.4em;
-    color: #333;
-  }
-
-  .cert-meta { font-size: 0.75rem; color: #666; margin-bottom: 8px; }
-  .cert-date { font-size: 0.7rem; color: #999; font-style: italic; display: block; }
-
-  .btn-cert {
-    padding: 4px 10px;
-    background: #2188ff;
-    color: #fff !important;
-    text-decoration: none !important;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    text-align: center;
-    margin-top: auto;
+    font-size: 0.95rem !important;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px !important;
+    min-height: 2.6em;
   }
 
   /* Işık Kutusu (Lightbox) */
@@ -88,11 +79,7 @@ author_profile: true
     align-items: center; justify-content: center;
     cursor: pointer;
   }
-  #lightbox img { max-width: 90%; max-height: 90%; border: 2px solid white; }
-
-  /* Duyarlı Tasarım */
-  @media (max-width: 1200px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
+  #lightbox img { max-width: 85%; max-height: 85%; border: 3px solid white; }
 </style>
 
 <div class="cert-section">
