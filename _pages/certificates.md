@@ -6,9 +6,14 @@ author_profile: true
 ---
 
 <style>
-/* Main container */
 .cert-section {
-  margin: 2rem 0 3rem 0;
+  margin: 3rem 0;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e1e8ed;
+}
+
+.cert-section:last-child {
+  border-bottom: none;
 }
 
 .cert-section h2 {
@@ -19,21 +24,12 @@ author_profile: true
   font-size: 1.8rem;
 }
 
-.cert-section h3 {
-  color: #34495e;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
-
-/* Grid layout */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
-  margin-bottom: 2rem;
 }
 
-/* Certificate cards */
 .cert-card {
   border: 1px solid #e1e8ed;
   border-radius: 12px;
@@ -41,91 +37,94 @@ author_profile: true
   background: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
 }
 
 .cert-card:hover {
-  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  transform: translateY(-3px);
 }
 
-/* Image preview */
 .cert-preview {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
   border: 1px solid #ddd;
   margin-bottom: 1rem;
-  transition: opacity 0.3s ease;
+  background: #f8f9fa;
 }
 
 .cert-preview:hover {
-  opacity: 0.9;
-}
-
-/* Card content */
-.cert-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+  opacity: 0.95;
 }
 
 .cert-title {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: #2c3e50;
   margin: 0 0 0.5rem 0;
+  line-height: 1.4;
+}
+
+.cert-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
 }
 
 .cert-org {
   font-weight: 600;
   color: #7f8c8d;
   font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-}
-
-.cert-desc {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 1rem;
-  flex: 1;
 }
 
 .cert-date {
   font-size: 0.85rem;
   color: #95a5a6;
   font-style: italic;
-  margin-bottom: 0.8rem;
 }
 
-/* Download button */
+.cert-lang {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #ecf0f1;
+  color: #34495e;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.cert-desc {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
 .cert-download {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.5rem 1rem;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
   background: #3498db;
   color: white !important;
   text-decoration: none !important;
   border-radius: 6px;
   font-size: 0.9rem;
   transition: background 0.3s ease;
-  align-self: flex-start;
 }
 
 .cert-download:hover {
   background: #2980b9;
 }
 
-/* Lightbox */
 #lightbox {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.92);
   justify-content: center;
   align-items: center;
   z-index: 9999;
@@ -136,10 +135,9 @@ author_profile: true
   max-width: 90%;
   max-height: 90%;
   border-radius: 8px;
-  box-shadow: 0 0 30px rgba(255,255,255,0.2);
+  box-shadow: 0 0 40px rgba(255,255,255,0.3);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .cert-grid {
     grid-template-columns: 1fr;
@@ -147,79 +145,8 @@ author_profile: true
 }
 </style>
 
-<!-- CAMPus Programs -->
 <div class="cert-section">
-  <h2>🏕️ CAMPus - Competitive Analysis & Management Program</h2>
-  <div class="cert-grid">
-    
-    <div class="cert-card">
-      <img src="{{ site.baseurl }}/certificates/CAMPus/TR_DAMLAELMALI_CAMPus_Katilim.jpg" 
-           alt="CAMPus Participation Certificate" 
-           class="cert-preview"
-           onclick="openLightbox(this.src)">
-      <div class="cert-content">
-        <h3 class="cert-title">CAMPus Program Participation</h3>
-        <p class="cert-org">CAMPus</p>
-        <p class="cert-date">2025</p>
-        <p class="cert-desc">Intensive program focused on competitive analysis, strategic management, and business development methodologies.</p>
-        <a href="{{ site.baseurl }}/certificates/CAMPus/TR_DAMLAELMALI_CAMPus_Katilim.pdf" 
-           class="cert-download" 
-           target="_blank">
-          📄 View Certificate (PDF)
-        </a>
-      </div>
-    </div>
-
-    <div class="cert-card">
-      <img src="{{ site.baseurl }}/certificates/CAMPus/TR_2025_CAMPus_Syllabus.jpg" 
-           alt="CAMPus Syllabus" 
-           class="cert-preview"
-           onclick="openLightbox(this.src)">
-      <div class="cert-content">
-        <h3 class="cert-title">CAMPus Program Syllabus</h3>
-        <p class="cert-org">CAMPus</p>
-        <p class="cert-date">2025</p>
-        <p class="cert-desc">Comprehensive program curriculum covering competitive strategy, market analysis, and management frameworks.</p>
-        <a href="{{ site.baseurl }}/certificates/CAMPus/TR_2025_CAMPus_Syllabus.pdf" 
-           class="cert-download" 
-           target="_blank">
-          📄 View Syllabus (PDF)
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- YZTA -->
-<div class="cert-section">
-  <h2>🤖 YZTA - AI & Technology Academy</h2>
-  <div class="cert-grid">
-    
-    <div class="cert-card">
-      <img src="{{ site.baseurl }}/certificates/YZTA/TR_yzta_mezuniyet.jpg" 
-           alt="YZTA Graduation Certificate" 
-           class="cert-preview"
-           onclick="openLightbox(this.src)">
-      <div class="cert-content">
-        <h3 class="cert-title">YZTA Graduation Certificate</h3>
-        <p class="cert-org">YZTA - Yapay Zeka ve Teknoloji Akademisi</p>
-        <p class="cert-date">2024</p>
-        <p class="cert-desc">Comprehensive training in artificial intelligence, machine learning, and emerging technologies.</p>
-        <a href="{{ site.baseurl }}/certificates/YZTA/TR_yzta_mezuniyet.pdf" 
-           class="cert-download" 
-           target="_blank">
-          📄 View Certificate (PDF)
-        </a>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<!-- Aspire Leaders -->
-<div class="cert-section">
-  <h2>🌟 Aspire Leaders Program</h2>
+  <h2>Aspire Leaders Program (2025)</h2>
   <div class="cert-grid">
     
     <div class="cert-card">
@@ -227,23 +154,570 @@ author_profile: true
            alt="Aspire Leaders Certificate" 
            class="cert-preview"
            onclick="openLightbox(this.src)">
-      <div class="cert-content">
-        <h3 class="cert-title">Aspire Leaders Program - Certificate of Completion</h3>
-        <p class="cert-org">Aspire Institute</p>
-        <p class="cert-date">2025</p>
-        <p class="cert-desc">Leadership development program focusing on identity, global excellence, and strategic thinking.</p>
-        <a href="{{ site.baseurl }}/certificates/AspireLeaders/ENG_damla_elmali_alp_2025_certificate_of_completion.pdf" 
-           class="cert-download" 
-           target="_blank">
-          📄 View Certificate (PDF)
-        </a>
+      <h3 class="cert-title">Certificate of Completion</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Aspire Institute</span>
+        <span class="cert-date">2025</span>
+        <span class="cert-lang">ENG</span>
       </div>
+      <p class="cert-desc">Leadership development program focusing on personal identity, global perspectives, and excellence in leadership across diverse contexts.</p>
+      <a href="{{ site.baseurl }}/certificates/AspireLeaders/ENG_damla_elmali_alp_2025_certificate_of_completion.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/AspireLeaders/ENG_damla_elmali_alp_2025_letter_of_acknowledgement_page-0001.jpg" 
+           alt="Aspire Leaders Letter" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Letter of Acknowledgement</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Aspire Institute</span>
+        <span class="cert-date">2025</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Official recognition letter acknowledging participation and achievements in the Aspire Leaders Program.</p>
+      <a href="{{ site.baseurl }}/certificates/AspireLeaders/ENG_damla_elmali_alp_2025_letter_of_acknowledgement.pdf" 
+         class="cert-download" target="_blank">View Letter</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/AspireLeaders/ENG_ALP_DamlaElmali_module_1_badge_2025.jpg" 
+           alt="Module 1 Badge" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Module 1: Foundations Badge</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Aspire Institute</span>
+        <span class="cert-date">2025</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Completed foundational module covering core leadership principles and self-awareness development.</p>
+      <a href="{{ site.baseurl }}/certificates/AspireLeaders/ENG_ALP_DamlaElmali_module_1_badge_2025.pdf" 
+         class="cert-download" target="_blank">View Badge</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/AspireLeaders/ENG_ALP_DamlaElmali_module_2_badge_2025.jpg" 
+           alt="Module 2 Badge" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Module 2: Advanced Leadership Badge</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Aspire Institute</span>
+        <span class="cert-date">2025</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Completed advanced module focusing on strategic thinking, team dynamics, and global leadership challenges.</p>
+      <a href="{{ site.baseurl }}/certificates/AspireLeaders/ENG_ALP_DamlaElmali_module_2_badge_2025.pdf" 
+         class="cert-download" target="_blank">View Badge</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/AspireLeaders/ENG_AiLP_DamlaElmali_certificate_page-0001.jpg" 
+           alt="AiLP Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Aspire in Leadership Program</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Aspire Institute</span>
+        <span class="cert-date">2025</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Specialized leadership intensive program certificate demonstrating mastery of core leadership competencies.</p>
+      <a href="{{ site.baseurl }}/certificates/AspireLeaders/ENG_AiLP_DamlaElmali_certificate.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
     </div>
 
   </div>
 </div>
 
-<!-- Lightbox -->
+<div class="cert-section">
+  <h2>Google Project Management (Coursera)</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement.jpg" 
+           alt="Google Project Management Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Google Project Management Professional Certificate</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Google via Coursera</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Comprehensive professional certificate covering all phases of project management, from initiation to closure, including Agile methodologies.</p>
+      <a href="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement1_Foundations.jpg" 
+           alt="Foundations Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Foundations of Project Management</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Google via Coursera</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Introduction to project management fundamentals, organizational structures, and project life cycles.</p>
+      <a href="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement1_Foundations.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement2_ProjectInitiation.jpg" 
+           alt="Project Initiation Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Project Initiation: Starting a Successful Project</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Google via Coursera</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Learned to define project goals, deliverables, success criteria, and stakeholder management strategies.</p>
+      <a href="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement2_ProjectInitiation.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement3_ProjectPlanning.jpg" 
+           alt="Project Planning Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Project Planning: Putting It All Together</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Google via Coursera</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Developed skills in creating comprehensive project plans, budgets, risk management strategies, and communication plans.</p>
+      <a href="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement3_ProjectPlanning.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement4_ProjectExecution.jpg" 
+           alt="Project Execution Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Project Execution: Running the Project</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Google via Coursera</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Mastered project execution techniques, quality management, team dynamics, and effective communication during project implementation.</p>
+      <a href="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement4_ProjectExecution.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement5_Agile.jpg" 
+           alt="Agile Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Agile Project Management</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Google via Coursera</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Explored Agile philosophy, Scrum framework, sprints, and adaptive project management approaches.</p>
+      <a href="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement5_Agile.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement6_RealWorld.jpg" 
+           alt="Capstone Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Capstone: Applying Project Management in the Real World</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Google via Coursera</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Applied all learned concepts through a comprehensive capstone project simulating real-world project management scenarios.</p>
+      <a href="{{ site.baseurl }}/certificates/Coursera_GoogleProjectManagement/ENG_Coursera_GoogleProjectManagement6_RealWorld.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>Machine Learning (Coursera)</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Coursera_MachineLearning/ENG_Coursera_SupervisedMachineLearning.jpg" 
+           alt="Supervised Machine Learning" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Supervised Machine Learning: Regression and Classification</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Stanford via Coursera</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Fundamental machine learning course covering linear regression, logistic regression, and neural networks for supervised learning tasks.</p>
+      <a href="{{ site.baseurl }}/certificates/Coursera_MachineLearning/ENG_Coursera_SupervisedMachineLearning.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>MATLAB Onramp (MathWorks)</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/MATLAB/ENG_MATLAB_Onramp.jpg" 
+           alt="MATLAB Onramp" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">MATLAB Onramp</h3>
+      <div class="cert-meta">
+        <span class="cert-org">MathWorks</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Interactive introduction to MATLAB programming fundamentals, data visualization, and computational problem-solving.</p>
+      <a href="{{ site.baseurl }}/certificates/MATLAB/ENG_MATLAB_Onramp.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/MATLAB/ENG_MATLAB_Onramp_ProgressReport.jpg" 
+           alt="MATLAB Progress Report" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">MATLAB Onramp Progress Report</h3>
+      <div class="cert-meta">
+        <span class="cert-org">MathWorks</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Detailed progress report documenting completed modules and mastered MATLAB skills.</p>
+      <a href="{{ site.baseurl }}/certificates/MATLAB/ENG_MATLAB_Onramp_ProgressReport.pdf" 
+         class="cert-download" target="_blank">View Report</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>McKinsey Forward Program</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/McKinseyForward/ENG_McKinseyForward.jpg" 
+           alt="McKinsey Forward" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">McKinsey Forward Program</h3>
+      <div class="cert-meta">
+        <span class="cert-org">McKinsey & Company</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Professional development program focusing on problem-solving, critical thinking, and strategic business skills.</p>
+      <a href="{{ site.baseurl }}/certificates/McKinseyForward/ENG_McKinseyForward.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>Miuul Data Science & Machine Learning Bootcamp</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Miuul/ENG_Miuul_damla_elmali.jpg" 
+           alt="Miuul Participation" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Bootcamp Participation Certificate</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Miuul</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Intensive data science and machine learning bootcamp covering end-to-end ML workflows and real-world applications.</p>
+      <a href="{{ site.baseurl }}/certificates/Miuul/ENG_Miuul_damla_elmali.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Miuul/ENG_Miuul_DamlaElmali_Python.jpg" 
+           alt="Python Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Python for Data Science</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Miuul</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Comprehensive Python programming training focused on data manipulation, analysis libraries, and scientific computing.</p>
+      <a href="{{ site.baseurl }}/certificates/Miuul/ENG_Miuul_DamlaElmali_Python.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Miuul/ENG_Miuul_DamlaElmali_FeatureEng.jpg" 
+           alt="Feature Engineering Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Feature Engineering</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Miuul</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Advanced techniques for feature extraction, transformation, and selection to improve machine learning model performance.</p>
+      <a href="{{ site.baseurl }}/certificates/Miuul/ENG_Miuul_DamlaElmali_FeatureEng.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Miuul/ENG_Miuul_DamlaElmali_MachineLearning.jpg" 
+           alt="Machine Learning Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Machine Learning</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Miuul</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">In-depth machine learning training covering supervised and unsupervised algorithms, model evaluation, and deployment strategies.</p>
+      <a href="{{ site.baseurl }}/certificates/Miuul/ENG_Miuul_DamlaElmali_MachineLearning.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>SKYLAB Bootcamp</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/SKYLAB_Bootcamp/TR_DamlaElmali_SkylabBootcamp.jpg" 
+           alt="SKYLAB Bootcamp" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">SKYLAB Data Science Bootcamp</h3>
+      <div class="cert-meta">
+        <span class="cert-org">SKYLAB</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Intensive data science bootcamp covering statistical analysis, machine learning algorithms, and practical project implementation.</p>
+      <a href="{{ site.baseurl }}/certificates/SKYLAB_Bootcamp/TR_DamlaElmali_SkylabBootcamp.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>Turkcell Geleceği Yazanlar (Future Coders)</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Turkcell_GelecegiYazanlar/TR_Turkcell_DamlaElmali_Python101.jpg" 
+           alt="Python 101" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Python 101</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Turkcell Geleceği Yazanlar</span>
+        <span class="cert-date">2023</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Introduction to Python programming covering syntax, data structures, control flow, and basic algorithms.</p>
+      <a href="{{ site.baseurl }}/certificates/Turkcell_GelecegiYazanlar/TR_Turkcell_DamlaElmali_Python101.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/Turkcell_GelecegiYazanlar/TR_Turkcell_DamlaElmali_DataScience_AI_101-1.jpg" 
+           alt="Data Science & AI 101" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Data Science & AI 101</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Turkcell Geleceği Yazanlar</span>
+        <span class="cert-date">2023</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Foundational course in data science and artificial intelligence concepts, methodologies, and practical applications.</p>
+      <a href="{{ site.baseurl }}/certificates/Turkcell_GelecegiYazanlar/TR_Turkcell_DamlaElmali_DataScience_AI_101-1.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>YetGen - Youth in Technology Generation</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/YetGen/TR_YetGen_Sertifika.jpg" 
+           alt="YetGen Certificate TR" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">YetGen Jump Starter Program</h3>
+      <div class="cert-meta">
+        <span class="cert-org">YetGen by Softtech & Toptal</span>
+        <span class="cert-date">2021</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Youth technology and entrepreneurship program developing skills in software development, innovation, and professional growth.</p>
+      <a href="{{ site.baseurl }}/certificates/YetGen/TR_YetGen_Sertifika.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/YetGen/EN_MZV-MEF_YetGen_21.Yzyl_Yetkinlikleri_Farkindalk_Program_Katilmc_Sertifikas.jpg" 
+           alt="YetGen 21st Century Skills" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">21st Century Skills Awareness Program</h3>
+      <div class="cert-meta">
+        <span class="cert-org">YetGen by Softtech & Toptal</span>
+        <span class="cert-date">2021</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Program focused on developing essential 21st-century competencies including digital literacy, critical thinking, and collaboration skills.</p>
+      <a href="{{ site.baseurl }}/certificates/YetGen/EN_MZV-MEF_YetGen_21.Yzyl_Yetkinlikleri_Farkindalk_Program_Katilmc_Sertifikas.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>YGA - Young Guru Academy</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/YGA/ENG_yga_bgk.jpg" 
+           alt="YGA Certificate" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">YGA Social Innovation Program</h3>
+      <div class="cert-meta">
+        <span class="cert-org">Young Guru Academy</span>
+        <span class="cert-date">2023</span>
+        <span class="cert-lang">ENG</span>
+      </div>
+      <p class="cert-desc">Social innovation and entrepreneurship program developing skills in creative problem-solving and community impact initiatives.</p>
+      <a href="{{ site.baseurl }}/certificates/YGA/ENG_yga_bgk.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
+<div class="cert-section">
+  <h2>YZTA - AI & Technology Academy</h2>
+  <div class="cert-grid">
+    
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/YZTA/TR_yzta_mezuniyet.jpg" 
+           alt="YZTA Graduation" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">YZTA Graduation Certificate</h3>
+      <div class="cert-meta">
+        <span class="cert-org">YZTA - Yapay Zeka ve Teknoloji Akademisi</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Comprehensive artificial intelligence and technology academy covering ML fundamentals, neural networks, and practical AI applications.</p>
+      <a href="{{ site.baseurl }}/certificates/YZTA/TR_yzta_mezuniyet.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/YZTA/TR_yzta_bootcamp.jpg" 
+           alt="YZTA Bootcamp" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">YZTA AI Bootcamp</h3>
+      <div class="cert-meta">
+        <span class="cert-org">YZTA</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Intensive hands-on bootcamp focusing on AI implementation, deep learning frameworks, and real-world project development.</p>
+      <a href="{{ site.baseurl }}/certificates/YZTA/TR_yzta_bootcamp.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/YZTA/TR_yzta_girisimcilik.jpg" 
+           alt="YZTA Entrepreneurship" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">AI Entrepreneurship Module</h3>
+      <div class="cert-meta">
+        <span class="cert-org">YZTA</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Specialized training on AI-driven entrepreneurship, startup development, and technology commercialization strategies.</p>
+      <a href="{{ site.baseurl }}/certificates/YZTA/TR_yzta_girisimcilik.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/YZTA/TR_yzta_ideathon.jpg" 
+           alt="YZTA Ideathon" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">YZTA Ideathon Participation</h3>
+      <div class="cert-meta">
+        <span class="cert-org">YZTA</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Participated in AI-focused ideathon developing innovative solutions to real-world problems using artificial intelligence.</p>
+      <a href="{{ site.baseurl }}/certificates/YZTA/TR_yzta_ideathon.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="cert-card">
+      <img src="{{ site.baseurl }}/certificates/YZTA/TR_yzta_web.jpg" 
+           alt="YZTA Web Development" 
+           class="cert-preview"
+           onclick="openLightbox(this.src)">
+      <h3 class="cert-title">Web Development Module</h3>
+      <div class="cert-meta">
+        <span class="cert-org">YZTA</span>
+        <span class="cert-date">2024</span>
+        <span class="cert-lang">TR</span>
+      </div>
+      <p class="cert-desc">Full-stack web development training covering modern frameworks, responsive design, and web application deployment.</p>
+      <a href="{{ site.baseurl }}/certificates/YZTA/TR_yzta_web.pdf" 
+         class="cert-download" target="_blank">View Certificate</a>
+    </div>
+
+  </div>
+</div>
+
 <div id="lightbox" onclick="closeLightbox()">
   <img id="lightbox-img" alt="Certificate preview">
 </div>
@@ -258,29 +732,9 @@ function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
 }
 
-// ESC tuşu ile kapatma
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeLightbox();
   }
 });
 </script>
-```
-
-## ⚠️ ÖNEMLİ: Dosya Yapısı
-
-Sertifikalarınızın şu yapıda olması gerekiyor:
-```
-damla-elmali.github.io/
-├── certificates/
-│   ├── CAMPus/
-│   │   ├── TR_2025_CAMPus_Syllabus.pdf
-│   │   ├── TR_2025_CAMPus_Syllabus.jpg (OLUŞTURMANIZ GEREKECEK)
-│   │   ├── TR_DAMLAELMALI_CAMPus_Katilim.jpg
-│   │   └── TR_DAMLAELMALI_CAMPus_Katilim.pdf
-│   ├── YZTA/
-│   │   ├── TR_yzta_mezuniyet.jpg
-│   │   └── TR_yzta_mezuniyet.pdf
-│   └── AspireLeaders/
-│       ├── ENG_damla_elmali_alp_2025_certificate_of_completion_page-0001.jpg
-│       └── ENG_damla_elmali_alp_2025_certificate_of_completion.pdf
