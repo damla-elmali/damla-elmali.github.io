@@ -4,90 +4,80 @@ title: "Certificates"
 permalink: /certificates/
 author_profile: true
 ---
-
----
-
 {% include base_path %}
 
-**Damla Elmalı**  
-Email: dmla.elmali@gmail.com  
-Phone: +90 553 361 92 61  
-Location: Istanbul, Türkiye  
-
-LinkedIn: https://www.linkedin.com/in/damla-elmali  
-GitHub: https://github.com/damla-elmali  
-Website: https://damla-elmali.github.io/
-
----
-
 <style>
-  /* Sayfa genel düzeni */
-  .cert-container { margin-top: 1.5rem; }
-  
-  /* Başlıkları yan yana veya daha kompakt yapma */
-  .cert-section { margin-bottom: 2.5rem; }
-  .cert-section h2 { 
-    border-bottom: 2px solid #333; 
-    padding-bottom: 3px; 
-    margin-bottom: 15px; 
-    font-size: 1.3rem; /* Başlık boyutu biraz küçültüldü */
+  /* AcademicPages Font ve Sidebar Uyumu */
+  .cert-grid {
+    display: grid;
+    /* Bir satıra tam 4 kart sığması için sabit kolon yapısı */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .cert-card {
+    border: 1px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+  }
+
+  .cert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+
+  /* Görsel boyutlarını küçültüp sabitledik */
+  .cert-preview {
+    width: 100%;
+    height: 140px; 
+    object-fit: contain;
+    background: #fcfcfc;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    margin-bottom: 8px;
+    cursor: zoom-in;
+  }
+
+  .cert-title {
+    font-size: 0.85rem !important; /* Font boyutunu küçülttük */
+    font-weight: bold;
+    margin: 0 0 4px 0 !important;
+    line-height: 1.2;
     color: #2c3e50;
   }
 
-  /* Sabit 4'lü Grid Sistemi */
-  .cert-grid { 
-    display: grid; 
-    /* Bir satırda tam olarak 4 kart, her biri eşit genişlikte */
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 1rem; 
+  .cert-meta {
+    font-size: 0.75rem;
+    color: #6a737d;
+    margin-bottom: 8px;
   }
 
-  /* Kart tasarımı */
-  .cert-card { 
-    border: 1px solid #e1e4e8; 
-    border-radius: 6px; 
-    padding: 0.6rem; 
-    background: #fff; 
-    transition: all 0.2s ease; 
-    display: flex; 
-    flex-direction: column;
-    min-width: 0; /* Grid içinde taşmayı önler */
-  }
-  .cert-card:hover { transform: translateY(-3px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-  
-  /* Resim boyutu - Kart ne kadar küçükse o da orantılı kalır */
-  .cert-preview { 
-    width: 100%; 
-    height: 140px; 
-    object-fit: contain; 
-    background: #fcfcfc; 
-    border-radius: 4px; 
-    cursor: zoom-in; 
-    border: 1px solid #f0f0f0; 
-    margin-bottom: 0.4rem; 
-  }
-  
-  .cert-title { font-size: 0.85rem; font-weight: bold; margin-bottom: 3px !important; line-height: 1.2; }
-  .cert-org { font-size: 0.75rem; color: #666; margin-bottom: 2px; }
-  .cert-date { font-size: 0.7rem; color: #999; font-style: italic; margin-bottom: 6px; }
-  
-  .btn-cert { 
-    padding: 3px 8px; 
-    background: #2188ff; 
-    color: #fff !important; 
-    text-decoration: none !important; 
-    border-radius: 3px; 
-    font-size: 0.75rem; 
-    align-self: flex-start; 
-    margin-top: auto; 
+  .cert-date {
+    font-style: italic;
+    display: block;
+    margin-top: 2px;
   }
 
-  /* Lightbox */
-  #lightbox { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; cursor: pointer; }
-  #lightbox img { max-width: 90%; max-height: 90%; border: 1px solid white; }
+  /* Butonları AcademicPages tarzına yaklaştırdık */
+  .btn-cert {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    background: #2188ff;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: auto;
+  }
 
   /* Tablet ve Mobil Uyumu */
-  @media (max-width: 1024px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 1200px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
 </style>
 
