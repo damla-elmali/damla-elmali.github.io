@@ -8,12 +8,17 @@ author_profile: true
 {% include base_path %}
 
 <style>
-  /* AcademicPages Font ve Sidebar Uyumu */
+  /* Sayfa İçerik Alanını Genişletme */
+  .archive, .page {
+    width: 100% !important;
+    max-width: 1200px !important; /* Standart 800px yerine 1200px yaparak sağa genişlettik */
+  }
+
+  /* Grid Düzeni */
   .cert-grid {
     display: grid;
-    /* Bir satıra tam 4 kart sığması için sabit kolon yapısı */
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 15px;
     margin-top: 20px;
   }
 
@@ -22,63 +27,65 @@ author_profile: true
     border-radius: 8px;
     padding: 10px;
     background: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     transition: transform 0.2s ease;
   }
 
   .cert-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   }
 
-  /* Görsel boyutlarını küçültüp sabitledik */
   .cert-preview {
     width: 100%;
-    height: 140px; 
+    height: 150px; 
     object-fit: contain;
     background: #fcfcfc;
     border-radius: 4px;
-    border: 1px solid #eee;
+    border: 1px solid #f0f0f0;
     margin-bottom: 8px;
     cursor: zoom-in;
   }
 
   .cert-title {
-    font-size: 0.85rem !important; /* Font boyutunu küçülttük */
+    font-size: 0.85rem !important;
     font-weight: bold;
-    margin: 0 0 4px 0 !important;
+    margin: 0 0 5px 0 !important;
     line-height: 1.2;
-    color: #2c3e50;
+    min-height: 2.4em; /* Başlık boyu fark etmeksizin hizayı korur */
   }
 
-  .cert-meta {
-    font-size: 0.75rem;
-    color: #6a737d;
-    margin-bottom: 8px;
-  }
+  .cert-meta { font-size: 0.75rem; color: #666; margin-bottom: 8px; }
+  .cert-date { font-size: 0.7rem; color: #999; font-style: italic; display: block; }
 
-  .cert-date {
-    font-style: italic;
-    display: block;
-    margin-top: 2px;
-  }
-
-  /* Butonları AcademicPages tarzına yaklaştırdık */
   .btn-cert {
-    font-size: 0.75rem;
-    padding: 4px 8px;
+    padding: 4px 10px;
     background: #2188ff;
     color: #fff !important;
     text-decoration: none !important;
     border-radius: 4px;
+    font-size: 0.75rem;
     text-align: center;
     margin-top: auto;
   }
 
-  /* Tablet ve Mobil Uyumu */
-  @media (max-width: 1200px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
+  /* Işık Kutusu (Lightbox) */
+  #lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9);
+    align-items: center; justify-content: center;
+    cursor: pointer;
+  }
+  #lightbox img { max-width: 90%; max-height: 90%; border: 2px solid white; }
+
+  /* Ekran Uyumu */
+  @media (max-width: 1400px) { .cert-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 1000px) { .cert-grid { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 600px) { .cert-grid { grid-template-columns: 1fr; } }
 </style>
 
